@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+  import { StatusBar } from "@react-navigation/stack";
+  import { StyleSheet,Text,View,TouchableOpacity,TextInput,} from "react-native";
+  import { NavigationContainer } from "@react-navigation/native";
+  import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Principal from "./components/Indexpp.js"
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const Stack = createNativeStackNavigator();
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  export default function App() {
+    return (
+      <View>
+        <NavigationContainer>
+            <Stack.Navigator>
+              <Stack.Screen
+                name="Home"
+                component={Principal}
+                options={{ title: "SISTEMA DE VENTAS" }} />
+            </Stack.Navigator>
+          </NavigationContainer>
+      </View>
+     );
+
+  }
